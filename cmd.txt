@@ -1,0 +1,5 @@
+# 打包
+python setup.py build
+
+# 本地安装
+python setup.py install
