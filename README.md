@@ -21,4 +21,8 @@ from fly_log import debug_print
 print = debug_print
 
 print("my fly log ") 
+
+# 输出这样的格式
+# 2021-08-24 22:03:13 dev_run1(fly_log_sample_dev_run.py:7) dev_run1
+# 2021-08-24 22:03:13 dev_run1(fly_log_sample_dev_run.py:8) dev_run1
 ```
