@@ -16,7 +16,7 @@ LONGDOC=''' fly_log
 
 代码对 Python 3 兼容
 
-全自动安装：``pip install fly_log`` 
+全自动安装：``pip install fly-log`` 
  
 '''
 
