@@ -22,7 +22,7 @@ LONGDOC=''' fly_log
 
 setup(
     name = 'fly_log',
-    version = '0.1.21',
+    version = '0.1.22',
     keywords='fly log debug',
     description = 'a simple log for small project',
     long_description=LONGDOC,
