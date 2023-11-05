@@ -1,17 +1,31 @@
 from setuptools import setup, find_packages
 
-from pathlib import Path
 
-this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text(encoding="utf8") 
+LONGDOC=''' fly_log
+========
+
+最简单的日志，比 print 函数，多了时间与源文件信息。用于比较小的python项目，是适合的。
+
+特点
+========
+
+功能少，与print函数一致
+
+安装说明
+========
+
+代码对 Python 3 兼容
+
+全自动安装：``pip install fly-log`` 
+ 
+'''
 
 setup(
     name = 'fly_log',
-    version = '0.2.2', 
+    version = '0.1.22',
     keywords='fly log debug',
-    description = 'a simple log for small project',    
-    long_description=long_description,
-    long_description_content_type='text/markdown', 
+    description = 'a simple log for small project',
+    long_description=LONGDOC,
     license = 'MIT License',
     url = 'https://github.com/zero-space-man-community/fly_log',
     author = 'flythinker',
