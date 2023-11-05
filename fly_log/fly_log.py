@@ -4,7 +4,7 @@ import time
 import traceback
 
 """    
-×î¼òµ¥µÄÈÕÖ¾ÊµÏÖÄ£¿é£¬ÓÃÓÚÌæ»»printº¯Êı£¬Ôö¼Ó´òÓ¡Ê±¼äºÍ´úÂëÎ»ÖÃĞÅÏ¢    
+æœ€ç®€å•çš„æ—¥å¿—å®ç°æ¨¡å—ï¼Œç”¨äºæ›¿æ¢printå‡½æ•°ï¼Œå¢åŠ æ‰“å°æ—¶é—´å’Œä»£ç ä½ç½®ä¿¡æ¯    
 """
 
 
@@ -14,7 +14,7 @@ current_milli_time = lambda: int(round(time.time() * 1000))
 
 def debug_print(*p):
     """
-    ¿ª·¢´òÓ¡º¯Êı£¬´òÓ¡Ê±¼äºÍ´úÂëÎ»ÖÃĞÅÏ¢
+    å¼€å‘æ‰“å°å‡½æ•°ï¼Œæ‰“å°æ—¶é—´å’Œä»£ç ä½ç½®ä¿¡æ¯
     """
     current_frame = sys._getframe(1)
 
@@ -22,10 +22,10 @@ def debug_print(*p):
     code_info = " %s(%s:%s)" % (current_frame.f_code.co_name, os.path.basename(current_frame.f_code.co_filename), current_frame.f_lineno)
     old_print(time.strftime("%Y-%m-%d %H:%M:%S.")  + milli_tim_str + code_info, *p)
 
-# ¼ÇÂ¼Ö´ĞĞÊ±¼äµÄ×°ÊÎÆ÷
+# è®°å½•æ‰§è¡Œæ—¶é—´çš„è£…é¥°å™¨
 def log_time(func):    
     """
-    ¼ÇÂ¼Ö´ĞĞÊ±¼äµÄ×°ÊÎÆ÷
+    è®°å½•æ‰§è¡Œæ—¶é—´çš„è£…é¥°å™¨
     """
     def wrapper(*args, **kwargs):
         start = time.time()

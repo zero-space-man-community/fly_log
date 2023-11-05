@@ -1,9 +1,0 @@
-# 打包
-python setup.py sdist
-python setup.py build
-
-# 本地安装
-python setup.py install
-
-# 发布软件包到 https://pypi.org/
-twine upload dist/*

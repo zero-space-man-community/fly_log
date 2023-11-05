@@ -3,7 +3,7 @@ from fly_log import debug_print as print, log_time
 import time
 
 """   
-    1. ±¾ÎÄ¼şÓÃÓÚ¿ª·¢²âÊÔ
+    1. æœ¬æ–‡ä»¶ç”¨äºå¼€å‘æµ‹è¯•
 """
 
 def test1():
