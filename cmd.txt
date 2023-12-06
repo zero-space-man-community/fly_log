@@ -17,3 +17,8 @@ python dev_run.py
 sphinx-apidoc -e -f -o sphinx-docs/source/fly_log fly_log
 cd sphinx-docs & make html & cd ..
 make html 
+
+
+git tag tag-0.3.1 
+git push 
+git push origin --tags
