@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf8")
 
 setup(
     name = 'fly_log',
-    version = '0.2.2', 
+    version = '0.3.1',  
     keywords='fly log debug',
     description = 'a simple log for small project',    
     long_description=long_description,
