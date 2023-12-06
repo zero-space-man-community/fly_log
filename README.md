@@ -3,7 +3,7 @@ fly_log
 
 最简单的日志，比 print 函数，多了时间与源文件信息。用于比较小的python项目，是适合的。
 
-`from fly_log import debug_print as print, log_time `
+`from fly_log import debug_print as print, log_time, set_log_to_file `
 
 特点
 ========
@@ -30,6 +30,10 @@ def test1():
 @log_time 
 def test2():
     time.sleep(0.5)  
+
+def test3():
+    set_log_to_file("logs/a.log")
+    print("aaa")   
 
 test1()
 test2()
