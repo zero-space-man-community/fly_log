@@ -7,10 +7,20 @@ import traceback
 最简单的日志实现模块，用于替换print函数，增加打印时间和代码位置信息    
 """
 
+global_is_log_to_file = False
+global_is_log_to_console = True 
+global_is_log_to_redis = False
+global_log_filepath = None
 
 old_print = print
 current_milli_time = lambda: int(round(time.time() * 1000))
 
+def set_log_to_file(log_filepath,is_to_console=True):
+    global global_is_log_to_file,global_log_filepath,global_is_log_to_console
+    
+    global_is_log_to_console = is_to_console
+    global_log_filepath = log_filepath
+    global_is_log_to_file = True
 
 def debug_print(*p):
     """
@@ -19,8 +29,14 @@ def debug_print(*p):
     current_frame = sys._getframe(1)
 
     milli_tim_str = "%03d " % (current_milli_time() % 1000)
-    code_info = " %s(%s:%s)" % (current_frame.f_code.co_name, os.path.basename(current_frame.f_code.co_filename), current_frame.f_lineno)
-    old_print(time.strftime("%Y-%m-%d %H:%M:%S.")  + milli_tim_str + code_info, *p)
+    code_info = " %s(%s:%s)" % (current_frame.f_code.co_name, os.path.basename(current_frame.f_code.co_filename), current_frame.f_lineno)    
+
+    if global_is_log_to_console:
+        old_print(time.strftime("%Y-%m-%d %H:%M:%S.")  + milli_tim_str + code_info, *p)
+    
+    if global_is_log_to_file:
+        with open(global_log_filepath,'a') as f:
+            old_print(time.strftime("%Y-%m-%d %H:%M:%S.")  + milli_tim_str + code_info, *p, file=f) 
 
 # 记录执行时间的装饰器
 def log_time(func):    

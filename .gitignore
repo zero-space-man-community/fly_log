@@ -1,6 +1,7 @@
 /fly_log.egg-info/
 /build/
 /dist/
+/logs/
 .idea/
 *.pyc
 sphinx-docs/build/**
